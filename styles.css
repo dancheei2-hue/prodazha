@@ -171,6 +171,22 @@ p{ margin: 0 0 12px; }
 .placeholder-14{ background: linear-gradient(135deg, #c9b8ff, #7a5cff); }
 .placeholder-15{ background: linear-gradient(135deg, #1e3a8a, #2f5bff 60%, #9ad0ff); }
 
+/* ---------- Real photo frames (hero / contact) ---------- */
+
+.photo-frame{
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-bg-soft);
+}
+.photo-frame img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
 /* ---------- Sticky notes ---------- */
 
 .sticky-note{
