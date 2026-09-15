@@ -63,16 +63,48 @@ document.addEventListener('DOMContentLoaded', () => {
   if (videoPlayBtn) videoPlayBtn.addEventListener('click', playVideoPlaceholder);
   if (videoCtaBtn) videoCtaBtn.addEventListener('click', playVideoPlaceholder);
 
-  /* ---------- Contact form ---------- */
+  /* ---------- Contact form: sends submissions to danil@avreal.ru via FormSubmit ---------- */
   const contactForm = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
+  const formError = document.getElementById('formError');
+  const FORM_ENDPOINT = 'https://formsubmit.co/ajax/danil@avreal.ru';
 
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      formSuccess.classList.add('visible');
-      contactForm.reset();
-      setTimeout(() => formSuccess.classList.remove('visible'), 6000);
+
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const name = contactForm.querySelector('input[name="name"]').value.trim();
+      const phone = contactForm.querySelector('input[name="phone"]').value.trim();
+
+      if (formError) formError.classList.remove('visible');
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.style.opacity = '0.7'; }
+
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          phone: phone,
+          _subject: 'Новая заявка с сайта «Продай сам»',
+          _template: 'table'
+        })
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error('Request failed');
+          formSuccess.classList.add('visible');
+          contactForm.reset();
+          setTimeout(() => formSuccess.classList.remove('visible'), 8000);
+        })
+        .catch(() => {
+          if (formError) formError.classList.add('visible');
+        })
+        .finally(() => {
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
+        });
     });
   }
 
