@@ -512,44 +512,43 @@ p{ margin: 0 0 12px; }
 
 .mistakes-section{ background: var(--color-bg-soft); }
 
-.mistakes-grid{
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+.mistakes-list{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.mistake-card{
-  background: #fff;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-}
-
-.mistake-photo{
-  aspect-ratio: 4/3;
-  border-radius: 0;
+.mistake-row{
   display: flex;
   align-items: flex-start;
-  justify-content: flex-end;
-  padding: 12px;
-}
-
-.mistake-badge{
-  position: relative;
-  z-index: 1;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
+  gap: 20px;
   background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 24px;
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+.mistake-row:hover{ box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
+
+.mistake-icon{
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.mistake-icon span{
+  position: relative;
+  z-index: 1;
+  font-size: 20px;
+  color: #fff;
 }
 
-.mistake-card h3{ font-size: 15px; padding: 16px 16px 0; }
-.mistake-card p{ font-size: 13px; color: var(--color-text-light); padding: 0 16px 18px; }
+.mistake-body h3{ font-size: 17px; margin-bottom: 6px; }
+.mistake-body p{ font-size: 14.5px; color: var(--color-text-light); margin: 0; max-width: 720px; }
 
 /* ---------- FAQ ---------- */
 
@@ -736,7 +735,6 @@ p{ margin: 0 0 12px; }
 
 @media (max-width: 1080px){
   .stages-grid{ grid-template-columns: repeat(2, 1fr); }
-  .mistakes-grid{ grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 960px){
@@ -775,7 +773,7 @@ p{ margin: 0 0 12px; }
 }
 
 @media (max-width: 720px){
-  .mistakes-grid{ grid-template-columns: repeat(2, 1fr); }
+  .mistake-row{ flex-direction: column; gap: 14px; padding: 20px; }
   .section{ padding: 64px 0; }
   .hero{ padding: 48px 0 64px; }
   .hero-stats{ grid-template-columns: repeat(2, auto); row-gap: 20px; }
@@ -787,6 +785,5 @@ p{ margin: 0 0 12px; }
 
 @media (max-width: 480px){
   .stages-grid{ grid-template-columns: 1fr; }
-  .mistakes-grid{ grid-template-columns: 1fr; }
   .hero-quote-card{ font-size: 13px; }
 }

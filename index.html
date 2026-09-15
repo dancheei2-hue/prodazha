@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Данил Аверин, Самолет Плюс — Продай сам. Система профессиональной продажи квартир</title>
-<meta name="description" content="20 понятных этапов — от оценки до получения денег. Пошаговые инструкции, чек-листы, шаблоны и поддержка для самостоятельной продажи квартиры.">
+<meta name="description" content="Бесплатная пошаговая инструкция от риелтора Данила Аверина для тех, кто решил продать квартиру самостоятельно: 20 этапов, видео и чек-листы, разбор частых ошибок.">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,14 +19,16 @@
       <span class="logo-main">самолет</span><span class="logo-accent">плюс</span>
     </a>
 
-    <nav class="main-nav" id="mainNav">
-      <a href="#system">О системе</a>
-      <a href="stages.html">20 этапов</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Контакты</a>
-    </nav>
+    <div class="nav-actions" id="navActions">
+      <nav class="main-nav" id="mainNav">
+        <a href="#system">О системе</a>
+        <a href="stages.html">20 этапов</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Контакты</a>
+      </nav>
 
-    <a href="#contact" class="btn btn-primary btn-header">Начать сейчас <span class="arrow">→</span></a>
+      <a href="#contact" class="btn btn-primary btn-header">Начать сейчас <span class="arrow">→</span></a>
+    </div>
 
     <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -40,14 +42,14 @@
   <section class="hero" id="system">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">Система профессиональной продажи квартир</p>
+        <p class="eyebrow">Раз вы решили продавать сами</p>
         <h1>
-          Продавайте квартиру самостоятельно.
-          <span class="accent-line">Уверенно. Поэтапно.<br>Без рисков.</span>
+          Сделайте это правильно —
+          <span class="accent-line">по шагам, без ошибок,<br>которые стоят денег.</span>
         </h1>
         <p class="hero-text">
-          20 понятных этапов — от оценки до получения денег.
-          Пошаговые инструкции, чек-листы, шаблоны и поддержка.
+          20 этапов честной инструкции от практикующего риелтора: что реально нужно
+          сделать, чтобы продать квартиру самостоятельно — от оценки до получения денег.
         </p>
         <div class="hero-actions">
           <a href="stages.html" class="btn btn-primary">Начать обучение <span class="arrow">→</span></a>
@@ -83,6 +85,15 @@
   </section>
 
   <!-- VIDEO -->
+  <!--
+    Когда появится готовое видео на RuTube или VK Видео — замените
+    содержимое .video-player на iframe со ссылкой встраивания:
+
+    RuTube:  <iframe src="https://rutube.ru/play/embed/ВАШ_ID/" allowfullscreen></iframe>
+    VK Видео: <iframe src="https://vk.com/video_ext.php?oid=..&id=..&hash=.." allowfullscreen></iframe>
+
+    Ссылку для вставки платформа даёт в разделе «Поделиться» → «Код для вставки».
+  -->
   <section class="section video-section" id="video">
     <div class="container video-grid">
       <div class="video-player placeholder-gradient placeholder-5">
@@ -123,35 +134,45 @@
         <a href="#contact" class="link-arrow head-link">Все ошибки и решения <span class="arrow">→</span></a>
       </div>
 
-      <div class="mistakes-grid">
-        <article class="mistake-card">
-          <div class="mistake-photo placeholder-gradient placeholder-10"><span class="mistake-badge">₽</span></div>
-          <h3>Неправильно определяют цену</h3>
-          <p>Слишком высокая или низкая цена отпугивает покупателей.</p>
+      <div class="mistakes-list">
+        <article class="mistake-row">
+          <div class="mistake-icon placeholder-gradient placeholder-10"><span>₽</span></div>
+          <div class="mistake-body">
+            <h3>Неправильно определяют цену</h3>
+            <p>Завышенная цена отпугивает покупателей в первые же дни: объявление «протухает» в поиске, и даже последующее снижение цены не спасает — покупатели видят долгий срок экспозиции и решают, что с квартирой что-то не так. Заниженная цена, наоборот, теряет деньги сразу — часто десятки, а то и сотни тысяч рублей. Правильная цена определяется по реальным сделкам в доме и районе, а не по соседним объявлениям.</p>
+          </div>
         </article>
 
-        <article class="mistake-card">
-          <div class="mistake-photo placeholder-gradient placeholder-11"><span class="mistake-badge">📷</span></div>
-          <h3>Слабое объявление</h3>
-          <p>Плохие фото и описание уменьшают количество обращений.</p>
+        <article class="mistake-row">
+          <div class="mistake-icon placeholder-gradient placeholder-11"><span>📷</span></div>
+          <div class="mistake-body">
+            <h3>Слабое объявление</h3>
+            <p>Первое, на что смотрит покупатель, — фото. Тёмные, неаккуратные снимки «как есть» сокращают число обращений в разы ещё до того, как человек прочитал текст. Хорошие фото и честное подробное описание увеличивают поток звонков и позволяют увереннее держать цену на переговорах.</p>
+          </div>
         </article>
 
-        <article class="mistake-card">
-          <div class="mistake-photo placeholder-gradient placeholder-12"><span class="mistake-badge">📵</span></div>
-          <h3>Не умеют работать с обращениями</h3>
-          <p>Теряют потенциальных покупателей на этапе звонков.</p>
+        <article class="mistake-row">
+          <div class="mistake-icon placeholder-gradient placeholder-12"><span>📵</span></div>
+          <div class="mistake-body">
+            <h3>Не умеют работать с обращениями</h3>
+            <p>Каждый пропущенный звонок или долгий ответ на сообщение — это упущенный покупатель, который просто уходит к следующему объявлению. Важно отвечать быстро, вести учёт обращений и не терять контакты потенциальных покупателей в переписке.</p>
+          </div>
         </article>
 
-        <article class="mistake-card">
-          <div class="mistake-photo placeholder-gradient placeholder-13"><span class="mistake-badge">🤝</span></div>
-          <h3>Показы без стратегии</h3>
-          <p>Показы должны вести к следующему шагу.</p>
+        <article class="mistake-row">
+          <div class="mistake-icon placeholder-gradient placeholder-13"><span>🤝</span></div>
+          <div class="mistake-body">
+            <h3>Показы без стратегии</h3>
+            <p>Показ «просто чтобы посмотреть» редко приводит к сделке. Каждый показ должен вести к следующему шагу — обратной связи, торгу или авансу. Без чёткого плана продавец теряет время на показы, которые никуда не движутся, а покупатель теряет интерес.</p>
+          </div>
         </article>
 
-        <article class="mistake-card">
-          <div class="mistake-photo placeholder-gradient placeholder-14"><span class="mistake-badge">🤝</span></div>
-          <h3>Слишком рано торгуются</h3>
-          <p>Можно потерять деньги без необходимости.</p>
+        <article class="mistake-row">
+          <div class="mistake-icon placeholder-gradient placeholder-14"><span>💸</span></div>
+          <div class="mistake-body">
+            <h3>Слишком рано торгуются</h3>
+            <p>Соглашаясь на скидку при первом же предложении, продавец часто теряет деньги без необходимости — покупатель, который уже решил взять именно эту квартиру, обычно готов заплатить больше. Торг стоит вести после нескольких показов, когда понятен реальный интерес рынка, а не при первом звонке.</p>
+          </div>
         </article>
       </div>
     </div>
@@ -225,7 +246,7 @@
           <div class="option-icon placeholder-gradient placeholder-2"><span>📖</span></div>
           <h3>Изучить материалы</h3>
           <p>Получите пошаговую систему профессиональной продажи квартиры. 20 этапов, видео, чек-листы и шаблоны.</p>
-          <a href="#stages" class="link-arrow">Перейти к изучению <span class="arrow">→</span></a>
+          <a href="stages.html" class="link-arrow">Перейти к изучению <span class="arrow">→</span></a>
         </article>
 
         <article class="option-card">
@@ -370,7 +391,7 @@
 
     <nav class="footer-nav">
       <a href="#system">О системе</a>
-      <a href="#stages">20 этапов</a>
+      <a href="stages.html">20 этапов</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Контакты</a>
     </nav>
