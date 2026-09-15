@@ -1,0 +1,221 @@
+/* =========================================================
+   Страница "20 этапов" — вёрстка навигации и деталей
+   ========================================================= */
+
+.back-link{
+  display: inline-block;
+  margin-bottom: 18px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-blue);
+}
+.back-link:hover{ color: var(--color-blue-dark); }
+
+.stages-hero{
+  padding: 56px 0 40px;
+  background: linear-gradient(180deg, var(--color-bg-soft), #fff 85%);
+}
+.stages-hero h1{ max-width: 640px; }
+.stages-hero .section-lead{ max-width: 640px; margin-bottom: 24px; }
+
+.main-nav a.active-link{ color: var(--color-blue); }
+
+.stages-app-section{
+  padding: 0 0 88px;
+}
+
+.stages-app{
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* ---------- Sidebar nav ---------- */
+
+.stages-nav{
+  position: sticky;
+  top: 96px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 14px;
+}
+
+.nav-group{ margin-bottom: 18px; }
+.nav-group:last-child{ margin-bottom: 0; }
+
+.nav-group-label{
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--color-text-light);
+  margin: 0 0 8px 10px;
+}
+
+.nav-group-list{ display: flex; flex-direction: column; gap: 2px; }
+
+.nav-stage-link{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-navy-soft);
+  transition: background .15s ease, color .15s ease;
+}
+.nav-stage-link:hover{ background: var(--color-bg-soft); }
+.nav-stage-link.active{
+  background: var(--color-blue);
+  color: #fff;
+}
+
+.nav-stage-num{
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-blue-light);
+  color: var(--color-blue);
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-stage-link.active .nav-stage-num{
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+}
+
+/* ---------- Stage detail ---------- */
+
+.stage-detail{
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-card);
+  min-height: 420px;
+}
+
+.stage-summary{
+  color: var(--color-text-light);
+  font-size: 15px;
+  max-width: 620px;
+  margin-bottom: 22px;
+}
+
+.stage-video-placeholder{
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #0f1c3f, #1e3a8a 60%, #2f5bff);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+.stage-video-placeholder span{ font-size: 34px; }
+
+.stage-video-frame{
+  position: relative;
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 24px;
+  background: #000;
+}
+.stage-video-frame iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.stage-checklist-box{
+  background: var(--color-bg-soft);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+  margin-bottom: 28px;
+}
+.stage-checklist-title{
+  font-weight: 800;
+  color: var(--color-navy);
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+.stage-checklist{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+.stage-checklist li{
+  position: relative;
+  padding-left: 26px;
+  font-size: 14px;
+  color: var(--color-text);
+}
+.stage-checklist li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-blue);
+  border-radius: 4px;
+}
+
+.stage-pager{
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--color-border);
+  padding-top: 22px;
+}
+.stage-pager-btn{
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-navy);
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  transition: border-color .15s ease, color .15s ease;
+  max-width: 48%;
+}
+.stage-pager-btn:hover{ border-color: var(--color-blue); color: var(--color-blue); }
+.stage-pager-next{ margin-left: auto; text-align: right; }
+
+.stage-load-error{ color: var(--color-text-light); }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px){
+  .stages-app{ grid-template-columns: 1fr; }
+
+  .stages-nav{
+    position: static;
+    max-height: none;
+    margin-bottom: 8px;
+  }
+
+  .stage-detail{ padding: 22px; }
+
+  .stage-pager-btn{ max-width: 100%; }
+  .stage-pager{ flex-direction: column; }
+  .stage-pager-next{ text-align: left; margin-left: 0; }
+}

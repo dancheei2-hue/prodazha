@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20 этапов продажи квартиры — Данил Аверин</title>
+<meta name="description" content="Пошаговая инструкция по продаже квартиры: 20 этапов с видео и чек-листами, от оценки до получения денег.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="stages.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-main">самолет</span><span class="logo-accent">плюс</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html#system">О системе</a>
+      <a href="stages.html" class="active-link">20 этапов</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact">Контакты</a>
+    </nav>
+
+    <a href="index.html#contact" class="btn btn-primary btn-header">Обсудить продажу <span class="arrow">→</span></a>
+
+    <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="stages-hero">
+    <div class="container">
+      <a href="index.html" class="back-link">← На главную</a>
+      <p class="eyebrow">Пошаговая система</p>
+      <h1>20 этапов продажи квартиры</h1>
+      <p class="section-lead">
+        Полный путь от оценки квартиры до получения денег — с видеообъяснением
+        и чек-листом по каждому этапу. Смотрите по порядку или сразу переходите
+        к нужному шагу.
+      </p>
+      <a class="btn btn-primary" href="checklist-20-etapov.pdf" download>
+        Скачать чек-лист по всем 20 этапам (PDF) <span class="arrow">↓</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="stages-app-section">
+    <div class="container stages-app">
+
+      <aside class="stages-nav" id="stagesNav" aria-label="Список этапов">
+        <!-- заполняется через JS из stages-data.json -->
+      </aside>
+
+      <article class="stage-detail" id="stageDetail">
+        <!-- заполняется через JS -->
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <span class="logo-main">самолет</span><span class="logo-accent">плюс</span>
+      </a>
+      <p>ПРОДАЙ САМ — знания, которые работают</p>
+      <p class="footer-contacts"><a href="tel:+79512002182">+7 951 200-21-82</a> · <a href="mailto:danil@avreal.ru">danil@avreal.ru</a></p>
+    </div>
+
+    <nav class="footer-nav">
+      <a href="index.html#system">О системе</a>
+      <a href="stages.html">20 этапов</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact">Контакты</a>
+    </nav>
+
+    <p class="footer-copy">© 2026 Данил Аверин.<br>Проект Самолет Плюс</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="stages.js"></script>
+</body>
+</html>
