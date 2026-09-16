@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>20 этапов продажи квартиры — Данил Аверин</title>
-<meta name="description" content="Пошаговая инструкция по продаже квартиры: 20 этапов с видео и чек-листами, от оценки до получения денег.">
+<meta name="description" content="Пошаговая инструкция по продаже квартиры: 20 уроков с видео и чек-листами, от оценки до получения денег.">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,38 +38,85 @@
 </header>
 
 <main>
-
-  <section class="stages-hero">
-    <div class="container">
-      <a href="index.html" class="back-link">← На главную</a>
-      <p class="eyebrow">Пошаговая система</p>
-      <h1>20 этапов продажи квартиры</h1>
-      <p class="section-lead">
-        Полный путь от оценки квартиры до получения денег — с видеообъяснением
-        и чек-листом по каждому этапу. Смотрите по порядку или сразу переходите
-        к нужному шагу.
-      </p>
-      <a class="btn btn-primary" href="checklist-20-etapov.pdf" download>
-        Скачать чек-лист по всем 20 этапам (PDF) <span class="arrow">↓</span>
-      </a>
+  <section class="course-app-section">
+    <div class="container course-app-header-row">
+      <div class="course-app-brand">
+        <span class="course-app-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        </span>
+        <div>
+          <p class="course-app-title">Продай сам</p>
+          <p class="course-app-subtitle">Курс по самостоятельной продаже недвижимости</p>
+        </div>
+      </div>
+      <button class="course-app-list-btn" id="toggleListBtn" aria-label="Все уроки">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1.2" fill="currentColor" stroke="none"/><circle cx="3.5" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="3.5" cy="18" r="1.2" fill="currentColor" stroke="none"/></svg>
+      </button>
     </div>
-  </section>
 
-  <section class="stages-app-section">
-    <div class="container stages-app">
+    <div class="container course-app-body" id="courseAppBody">
 
-      <aside class="stages-nav" id="stagesNav" aria-label="Список этапов">
-        <!-- заполняется через JS из stages-data.json -->
+      <!-- ЭКРАН 1: текущий урок -->
+      <div class="lesson-view" id="lessonView">
+        <div class="lesson-breadcrumb">
+          <button class="lesson-back-link" id="showListBtn">← К списку уроков</button>
+          <span class="lesson-counter" id="lessonCounter">Урок 1 из 20</span>
+        </div>
+
+        <h1 class="lesson-title" id="lessonTitle">Загрузка…</h1>
+
+        <div class="lesson-checklist-box">
+          <p class="lesson-checklist-heading">Что нужно сделать на этом этапе:</p>
+          <ul class="lesson-checklist" id="lessonChecklist"></ul>
+        </div>
+
+        <div class="lesson-video" id="lessonVideo"></div>
+
+        <div class="lesson-pager">
+          <button class="lesson-pager-btn lesson-prev" id="prevBtn">← Предыдущий</button>
+          <button class="lesson-pager-btn lesson-next" id="nextBtn">Следующий урок →</button>
+        </div>
+
+        <a class="lesson-next-card" id="nextCard" href="#">
+          <span class="lesson-next-thumb" aria-hidden="true"></span>
+          <span class="lesson-next-info">
+            <span class="lesson-next-label" id="nextCardLabel">Урок 2</span>
+            <span class="lesson-next-title" id="nextCardTitle">…</span>
+            <span class="lesson-next-duration" id="nextCardDuration">Скоро</span>
+          </span>
+          <span class="lesson-next-chevron" aria-hidden="true">›</span>
+        </a>
+      </div>
+
+      <!-- ЭКРАН 2: список всех уроков -->
+      <aside class="lessons-list-view" id="lessonsListView">
+        <button class="lesson-back-link lessons-list-back" id="backToLessonBtn">← Назад к уроку</button>
+        <h2 class="lessons-list-title">Все уроки (20)</h2>
+        <div class="lessons-list" id="lessonsList"></div>
+        <div class="lessons-list-actions">
+          <a class="btn btn-outline" href="checklist-20-etapov.pdf" download>Скачать чек-лист PDF</a>
+          <a class="btn btn-primary" href="index.html">🏠 Перейти на главную</a>
+        </div>
       </aside>
 
-      <article class="stage-detail" id="stageDetail">
-        <!-- заполняется через JS -->
-      </article>
-
     </div>
   </section>
-
 </main>
+
+<nav class="course-tabbar" id="courseTabbar" aria-label="Навигация по курсу">
+  <button class="tabbar-item is-active" id="tabLessons" type="button">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none"/></svg>
+    <span>Уроки</span>
+  </button>
+  <a class="tabbar-item" href="index.html">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+    <span>Главная</span>
+  </a>
+  <a class="tabbar-item" href="index.html#contact">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg>
+    <span>Контакты</span>
+  </a>
+</nav>
 
 <footer class="site-footer">
   <div class="container footer-inner">

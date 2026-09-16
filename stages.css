@@ -1,140 +1,215 @@
 /* =========================================================
-   Страница "20 этапов" — вёрстка навигации и деталей
+   Страница "20 уроков" — приложение-курс в стиле референса:
+   экран урока (чек-лист + видео + пейджер) и экран списка.
    ========================================================= */
-
-.back-link{
-  display: inline-block;
-  margin-bottom: 18px;
-  font-weight: 700;
-  font-size: 14px;
-  color: var(--color-blue);
-}
-.back-link:hover{ color: var(--color-blue-dark); }
-
-.stages-hero{
-  padding: 56px 0 40px;
-  background: linear-gradient(180deg, var(--color-bg-soft), #fff 85%);
-}
-.stages-hero h1{ max-width: 640px; }
-.stages-hero .section-lead{ max-width: 640px; margin-bottom: 24px; }
 
 .main-nav a.active-link{ color: var(--color-blue); }
 
-.stages-app-section{
-  padding: 0 0 88px;
+.lesson-back-link{
+  background: none;
+  border: none;
+  padding: 0;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-blue);
+  cursor: pointer;
+  font-family: inherit;
+}
+.lesson-back-link:hover{ color: var(--color-blue-dark); }
+
+/* ---------- Верхняя мини-шапка курса ---------- */
+
+.course-app-section{
+  padding: 28px 0 96px;
 }
 
-.stages-app{
+.course-app-header-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 22px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.course-app-brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.course-app-icon{
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--color-blue-light);
+  color: var(--color-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.course-app-title{
+  margin: 0;
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--color-navy);
+}
+.course-app-subtitle{
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--color-text-light);
+}
+
+.course-app-list-btn{
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color .15s ease, color .15s ease;
+}
+.course-app-list-btn:hover{ border-color: var(--color-blue); color: var(--color-blue); }
+
+/* ---------- Раскладка: урок + список ---------- */
+
+.course-app-body{
   display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 32px;
+  grid-template-columns: 1fr;
+  gap: 28px;
   align-items: flex-start;
 }
 
-/* ---------- Sidebar nav ---------- */
+/* ---------- Экран урока ---------- */
 
-.stages-nav{
-  position: sticky;
-  top: 96px;
-  max-height: calc(100vh - 120px);
-  overflow-y: auto;
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 18px 14px;
-}
-
-.nav-group{ margin-bottom: 18px; }
-.nav-group:last-child{ margin-bottom: 0; }
-
-.nav-group-label{
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: 11px;
-  font-weight: 800;
-  color: var(--color-text-light);
-  margin: 0 0 8px 10px;
-}
-
-.nav-group-list{ display: flex; flex-direction: column; gap: 2px; }
-
-.nav-stage-link{
+.lesson-breadcrumb{
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 9px 10px;
-  border-radius: var(--radius-sm);
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--color-navy-soft);
-  transition: background .15s ease, color .15s ease;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
 }
-.nav-stage-link:hover{ background: var(--color-bg-soft); }
-.nav-stage-link.active{
-  background: var(--color-blue);
-  color: #fff;
-}
-
-.nav-stage-num{
-  flex: none;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--color-blue-light);
-  color: var(--color-blue);
-  font-size: 11px;
+.lesson-counter{
+  font-size: 13px;
   font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.nav-stage-link.active .nav-stage-num{
-  background: rgba(255,255,255,0.25);
-  color: #fff;
-}
-
-/* ---------- Stage detail ---------- */
-
-.stage-detail{
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  box-shadow: var(--shadow-card);
-  min-height: 420px;
-}
-
-.stage-summary{
   color: var(--color-text-light);
-  font-size: 15px;
-  max-width: 620px;
-  margin-bottom: 22px;
 }
 
-.stage-video-placeholder{
-  aspect-ratio: 16/9;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, #0f1c3f, #1e3a8a 60%, #2f5bff);
-  color: #fff;
+.lesson-title{ margin-bottom: 22px; }
+
+.lesson-checklist-box{
+  background: var(--color-bg-soft);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  margin-bottom: 26px;
+}
+.lesson-checklist-heading{
+  font-weight: 800;
+  color: var(--color-navy);
+  font-size: 14px;
+  margin: 0 0 14px;
+}
+.lesson-checklist{
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
+  gap: 12px;
+}
+.lesson-checklist li{
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--color-navy-soft);
+}
+.lesson-checklist li::before{
+  content: "✓";
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: var(--color-blue);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  font-size: 14px;
 }
-.stage-video-placeholder span{ font-size: 34px; }
 
-.stage-video-frame{
+/* ---------- Видео ---------- */
+
+.lesson-video{ margin-bottom: 24px; }
+
+.lesson-video-placeholder{
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f1c3f, #1e3a8a 60%, #2f5bff);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+.lesson-video-stage{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lesson-video-play{
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lesson-video-play span{ transform: translateX(2px); }
+
+.lesson-video-controlbar{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(0,0,0,0.28);
+  color: rgba(255,255,255,0.9);
+  font-size: 12px;
+}
+.lesson-video-controlbar .cb-track{
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.28);
+  position: relative;
+  overflow: hidden;
+}
+.lesson-video-controlbar .cb-icon{ flex: none; opacity: .9; }
+
+.lesson-video-frame{
   position: relative;
   aspect-ratio: 16/9;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  margin-bottom: 24px;
   background: #000;
+  box-shadow: var(--shadow-card);
 }
-.stage-video-frame iframe{
+.lesson-video-frame iframe{
   position: absolute;
   inset: 0;
   width: 100%;
@@ -142,80 +217,253 @@
   border: 0;
 }
 
-.stage-checklist-box{
-  background: var(--color-bg-soft);
+/* ---------- Пейджер и следующий урок ---------- */
+
+.lesson-pager{
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.lesson-pager-btn{
+  flex: 1;
+  text-align: center;
+  padding: 14px 12px;
   border-radius: var(--radius-md);
-  padding: 22px 24px;
-  margin-bottom: 28px;
-}
-.stage-checklist-title{
-  font-weight: 800;
+  font-weight: 700;
+  font-size: 14.5px;
+  border: 1px solid var(--color-border);
+  background: #fff;
   color: var(--color-navy);
-  font-size: 14px;
-  margin: 0 0 12px;
+  cursor: pointer;
+  transition: border-color .15s ease, color .15s ease, background .15s ease;
+  font-family: inherit;
 }
-.stage-checklist{
+.lesson-prev:disabled{
+  opacity: .45;
+  cursor: not-allowed;
+}
+.lesson-prev:not(:disabled):hover{ border-color: var(--color-blue); color: var(--color-blue); }
+.lesson-next{
+  background: var(--color-blue);
+  border-color: var(--color-blue);
+  color: #fff;
+}
+.lesson-next:hover{ background: var(--color-blue-dark); }
+
+.lesson-next-card{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  text-decoration: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.lesson-next-card:hover{ border-color: var(--color-blue); box-shadow: var(--shadow-card); }
+.lesson-next-thumb{
+  flex: none;
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #0f1c3f, #2f5bff);
+}
+.lesson-next-info{
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.lesson-next-label{
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-blue);
+}
+.lesson-next-title{
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--color-navy);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lesson-next-duration{ font-size: 12.5px; color: var(--color-text-light); }
+.lesson-next-chevron{ flex: none; font-size: 22px; color: var(--color-text-light); }
+
+/* ---------- Экран / панель списка уроков ---------- */
+
+.lessons-list-view{
+  background: #fff;
+  display: none;
+}
+.lessons-list-view.is-visible{ display: block; }
+
+.lesson-view.is-hidden-mobile{ display: none; }
+
+.lessons-list-back{ margin-bottom: 14px; }
+
+.lessons-list-title{ font-size: 20px; margin-bottom: 16px; }
+
+.lessons-list{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.lesson-row{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background .15s ease, border-color .15s ease;
+}
+.lesson-row:hover{ background: var(--color-bg-soft); }
+.lesson-row.is-active{
+  background: var(--color-blue-light);
+  border-color: var(--color-blue);
+}
+.lesson-row-num{
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  color: var(--color-navy-soft);
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lesson-row.is-active .lesson-row-num{
+  background: var(--color-blue);
+  border-color: var(--color-blue);
+  color: #fff;
+}
+.lesson-row-text{
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.lesson-row-title{
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-navy);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lesson-row-duration{ font-size: 12px; color: var(--color-text-light); }
+.lesson-row-play{
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-blue);
+  color: #fff;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lesson-row-play span{ transform: translateX(1px); }
+
+.lessons-list-actions{
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 0 0 16px;
-  padding: 0;
-  list-style: none;
 }
-.stage-checklist li{
-  position: relative;
-  padding-left: 26px;
-  font-size: 14px;
-  color: var(--color-text);
-}
-.stage-checklist li::before{
-  content: "";
-  position: absolute;
+.lessons-list-actions .btn{ width: 100%; justify-content: center; }
+
+/* ---------- Нижняя таб-панель (мобильная) ---------- */
+
+.course-tabbar{
+  position: fixed;
   left: 0;
-  top: 4px;
-  width: 16px;
-  height: 16px;
-  border: 2px solid var(--color-blue);
-  border-radius: 4px;
-}
-
-.stage-pager{
+  right: 0;
+  bottom: 0;
+  z-index: 60;
   display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(8px);
   border-top: 1px solid var(--color-border);
-  padding-top: 22px;
 }
-.stage-pager-btn{
+.tabbar-item{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 10px 0 8px;
+  font-size: 11px;
   font-weight: 700;
-  font-size: 14px;
-  color: var(--color-navy);
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid var(--color-border);
-  transition: border-color .15s ease, color .15s ease;
-  max-width: 48%;
+  color: var(--color-text-light);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 }
-.stage-pager-btn:hover{ border-color: var(--color-blue); color: var(--color-blue); }
-.stage-pager-next{ margin-left: auto; text-align: right; }
+.tabbar-item.is-active{ color: var(--color-blue); }
 
-.stage-load-error{ color: var(--color-text-light); }
+/* ---------- Десктоп: урок + постоянная колонка списка ---------- */
 
-/* ---------- Responsive ---------- */
+@media (min-width: 961px){
+  .course-app-section{ padding-bottom: 88px; }
 
-@media (max-width: 900px){
-  .stages-app{ grid-template-columns: 1fr; }
-
-  .stages-nav{
-    position: static;
-    max-height: none;
-    margin-bottom: 8px;
+  .course-app-body{
+    grid-template-columns: 1fr 340px;
   }
 
-  .stage-detail{ padding: 22px; }
+  .lessons-list-view{
+    display: block;
+    position: sticky;
+    top: 96px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 22px;
+  }
+  .lessons-list-back{ display: none; }
 
-  .stage-pager-btn{ max-width: 100%; }
-  .stage-pager{ flex-direction: column; }
-  .stage-pager-next{ text-align: left; margin-left: 0; }
+  .course-app-list-btn{ display: none; }
+
+  .course-tabbar{ display: none; }
+
+  .lesson-view.is-hidden-mobile{ display: block; }
+}
+
+/* ---------- Мобильная адаптация ---------- */
+
+@media (max-width: 960px){
+  body{ padding-bottom: 62px; }
+
+  .lesson-pager-btn{ font-size: 13.5px; padding: 13px 8px; }
+
+  .lesson-next-thumb{ width: 52px; height: 52px; }
+
+  .lessons-list-view{
+    border-top: 1px solid var(--color-border);
+    padding-top: 24px;
+  }
+}
+
+@media (max-width: 560px){
+  .course-app-header-row{ align-items: flex-start; }
+  .course-app-subtitle{ display: none; }
 }
