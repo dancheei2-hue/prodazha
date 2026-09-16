@@ -1,3 +1,11 @@
+
+:root{--color-blue:#0164ff;--color-blue-dark:#0054d6;--color-blue-light:#eaf3fe;--color-navy:#102622;--color-navy-soft:#151f2b;--color-text-light:#52625e;--color-border:#d8e2df;--color-bg-soft:#f1f4f9;--radius-lg:20px;--radius-md:13px;--shadow-card:0 10px 30px rgba(16,38,34,.08)}
+body{background:#f4f7f5;color:#102622}
+.container{width:min(1100px,calc(100% - 48px));margin-inline:auto}
+.site-header .container.header-inner{height:78px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:inline-flex;align-items:baseline;gap:4px;font-weight:800}.logo-main{color:#102622}.logo-accent{color:#0164ff}
+.nav-actions{display:flex;align-items:center;gap:28px}.main-nav{display:flex;gap:24px}.main-nav a{font-size:14px;font-weight:600;color:#52625e}.main-nav a:hover,.main-nav a.active-link{color:#0164ff}.btn-primary{background:#0164ff;color:#fff;border:0}.btn-outline{background:#fff;color:#0164ff;border:1px solid #0164ff}.btn-header{min-height:46px}.course-app-section h1,.course-app-section h2,.course-app-section h3{color:#102622}.course-app-section{min-height:calc(100vh - 78px)}
+@media(max-width:960px){.container{width:calc(100% - 32px)}.site-header .container.header-inner{height:72px}.nav-actions{display:none}.course-app-section{padding:20px 0 84px}.course-app-header-row{padding-bottom:16px;margin-bottom:18px}.lesson-title{font-size:32px;line-height:1.05}.lesson-checklist-box{padding:18px}.lesson-pager{gap:8px}.lesson-next-card{padding:12px}.course-tabbar{display:flex}.site-footer{padding-bottom:86px}}
 /* =========================================================
    Страница "20 уроков" — приложение-курс в стиле референса:
    экран урока (чек-лист + видео + пейджер) и экран списка.
