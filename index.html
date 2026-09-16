@@ -3,179 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Данил Аверин, Самолет Плюс — Продай сам. Система профессиональной продажи квартир</title>
-<meta name="description" content="Бесплатная пошаговая инструкция от риелтора Данила Аверина для тех, кто решил продать квартиру самостоятельно: 20 этапов, видео и чек-листы, разбор частых ошибок.">
+<title>ПРОДАЙ САМ — система самостоятельной продажи квартиры</title>
+<meta name="description" content="Пошаговая система самостоятельной продажи квартиры: 20 этапов, видео, чек-листы и практические инструменты.">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
 <header class="site-header">
-  <div class="container header-inner">
-    <a href="#top" class="logo">
-      <span class="logo-main">самолет</span><span class="logo-accent">плюс</span>
+  <div class="header-shell">
+    <a class="brand" href="#top" aria-label="Продай сам">
+      <span class="brand-mark">⌂</span>
+      <span class="brand-name">ПРОДАЙ САМ</span>
     </a>
-
-    <div class="nav-actions" id="navActions">
-      <nav class="main-nav" id="mainNav">
-        <a href="#system">О системе</a>
-        <a href="stages.html">20 этапов</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Контакты</a>
-      </nav>
-
-      <a href="#contact" class="btn btn-primary btn-header">Начать сейчас <span class="arrow">→</span></a>
-    </div>
-
-    <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <nav class="desktop-nav" aria-label="Основная навигация">
+      <a href="#system">О системе</a>
+      <a href="stages.html">20 этапов</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <a class="header-cta" href="#contact">Начать сейчас <span>→</span></a>
+    <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#system">О системе</a>
+    <a href="stages.html">20 этапов</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Контакты</a>
+    <a class="mobile-menu-cta" href="#contact">Начать сейчас →</a>
   </div>
 </header>
 
 <main id="top">
-
-  <div class="container course-app-header-row">
-    <div class="course-app-brand">
-      <span class="course-app-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
-      </span>
-      <div>
-        <p class="course-app-title">Продай сам</p>
-        <p class="course-app-subtitle">Курс по самостоятельной продаже недвижимости</p>
-      </div>
+  <section class="hero" id="system">
+    <div class="hero-photo" aria-hidden="true">
+      <img src="desk.png" alt="">
+      <div class="hero-photo-fade"></div>
     </div>
-  </div>
-
-  <!-- HERO -->
-  <section class="hero-v2" id="system">
-    <div class="container hero-v2-top">
-      <div class="hero-v2-copy">
-        <p class="eyebrow">Онлайн-курс</p>
-        <h1>
-          Сделайте это <span class="accent-line">правильно</span>
-        </h1>
-        <p class="hero-v2-text">
-          20 этапов честной инструкции от практикующего риелтора: что реально нужно
-          сделать, чтобы продать квартиру самостоятельно — без ошибок, которые стоят денег.
-        </p>
-
-        <div class="hero-v2-chips">
-          <div class="hero-v2-chip">
-            <span class="chip-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>
-            </span>
-            <span>Понятно<br>и по шагам</span>
-          </div>
-          <div class="hero-v2-chip">
-            <span class="chip-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M8 6.5c0-1.4 1.8-2.5 4-2.5s4 1.1 4 2.5-1.8 2.5-4 2.5-4 1.1-4 2.5 1.8 2.5 4 2.5 4 1.1 4 2.5-1.8 2.5-4 2.5-4-1.1-4-2.5"/></svg>
-            </span>
-            <span>Экономия<br>на комиссии</span>
-          </div>
-          <div class="hero-v2-chip">
-            <span class="chip-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M12 19V5M20 19v-7"/></svg>
-            </span>
-            <span>Реальные<br>инструменты</span>
-          </div>
+    <div class="hero-content page-width">
+      <div class="hero-copy">
+        <p class="eyebrow light">БЕСПЛАТНЫЙ АЛГОРИТМ</p>
+        <h1>Как продать квартиру <span>самому</span></h1>
+        <p class="hero-description">Пошаговый алгоритм, как продать квартиру или дом без риелтора системно и без лишних затрат.</p>
+        <div class="hero-benefits">
+          <div><b>✓</b><span>Понятно<br>и по шагам</span></div>
+          <div><b>₽</b><span>Экономия<br>сотни тыс.</span></div>
+          <div><b>⌂</b><span>Реальные<br>инструменты</span></div>
         </div>
-
-        <div class="hero-v2-actions">
-          <a href="stages.html" class="btn btn-primary">Начать обучение <span class="arrow">→</span></a>
-          <a href="#video" class="btn btn-dark btn-play">
-            <span class="play-dot">▶</span> Смотреть видео о системе
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-v2-media">
-        <div class="hero-v2-photo photo-frame">
-          <span class="hero-v2-badge">Онлайн-курс</span>
-          <img src="desk.jpg" alt="Данил Аверин работает за ноутбуком" loading="eager">
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="hero-v2-intro-card">
-        <ul class="hero-v2-facts">
-          <li>
-            <span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-4 10 4-10 4-10-4z"/><path d="M6 11v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5"/></svg></span>
-            <strong>20</strong><span>уроков</span>
-          </li>
-          <li>
-            <span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M9 12h6M9 16h6"/></svg></span>
-            <strong>1</strong><span>чек-лист</span>
-          </li>
-          <li>
-            <span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
-            <strong>Доступ</strong><span>навсегда</span>
-          </li>
-          <li>
-            <span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg></span>
-            <strong>С любого</strong><span>устройства</span>
-          </li>
-        </ul>
-
-        <h2>Для кого эта система?</h2>
-        <ul class="hero-v2-audience">
-          <li>
-            <span class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg></span>
-            <p><strong>Для тех, кто решил</strong> продавать квартиру или дом самостоятельно</p>
-          </li>
-          <li>
-            <span class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M8 6.5c0-1.4 1.8-2.5 4-2.5s4 1.1 4 2.5-1.8 2.5-4 2.5-4 1.1-4 2.5 1.8 2.5 4 2.5 4 1.1 4 2.5-1.8 2.5-4 2.5-4-1.1-4-2.5"/></svg></span>
-            <p><strong>Для тех, кто хочет</strong> избежать типичных ошибок и не потерять деньги на сделке</p>
-          </li>
-          <li>
-            <span class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
-            <p><strong>Для тех, кто ценит время</strong> и хочет понятный план действий</p>
-          </li>
-          <li>
-            <span class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M12 19V5M20 19v-7"/></svg></span>
-            <p><strong>Для тех, кто хочет</strong> в конце сам решить: продолжать самостоятельно или подключить риелтора</p>
-          </li>
-        </ul>
-
-        <div class="hero-v2-quote">
-          <span class="quote-mark">&ldquo;</span>
-          <p>Мой опыт и вся практика — в одной понятной системе, чтобы вы прошли этот путь уверенно.</p>
-          <div class="quote-author">
-            <strong>Данил Аверин</strong>
-            <span>Риелтор, Самолет Плюс</span>
-          </div>
+        <div class="hero-actions">
+          <a class="btn btn-blue" href="stages.html">Начать обучение</a>
+          <a class="btn btn-dark" href="#video"><span class="play-small">▶</span> Смотреть видео</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- VIDEO -->
-  <!--
-    Когда появится готовое видео на RuTube или VK Видео — замените
-    содержимое .video-player на iframe со ссылкой встраивания:
-
-    RuTube:  <iframe src="https://rutube.ru/play/embed/ВАШ_ID/" allowfullscreen></iframe>
-    VK Видео: <iframe src="https://vk.com/video_ext.php?oid=..&id=..&hash=.." allowfullscreen></iframe>
-
-    Ссылку для вставки платформа даёт в разделе «Поделиться» → «Код для вставки».
-  -->
-  <section class="section video-section" id="video">
-    <div class="container video-grid">
-      <div class="video-player placeholder-gradient placeholder-5">
-        <span class="sticky-note note-2">Простыми словами<br>о важном</span>
-        <button class="video-play-btn" id="videoPlayBtn" aria-label="Воспроизвести видео">▶</button>
-        <div class="video-controls">
-          <span class="video-time">0:00 / 12:34</span>
-          <span class="video-icons">⛶</span>
-        </div>
+  <section class="intro section-white">
+    <div class="page-width">
+      <div class="course-facts">
+        <div><strong>20</strong><span>уроков</span></div>
+        <div><strong>1</strong><span>чек-лист</span></div>
+        <div><strong>∞</strong><span>доступ навсегда</span></div>
+        <div><strong>24/7</strong><span>с любого устройства</span></div>
       </div>
+      <h2>Кому это нужно?</h2>
+      <div class="audience-grid">
+        <div class="audience-item"><span>⌂</span><p>Для тех, кто хочет продавать квартиру самостоятельно</p></div>
+        <div class="audience-item"><span>₽</span><p>Для тех, кто хочет сэкономить на комиссии</p></div>
+        <div class="audience-item"><span>◷</span><p>Для тех, кто хочет понятный план действий</p></div>
+        <div class="audience-item"><span>↗</span><p>Для тех, кто хочет получить максимальную цену</p></div>
+      </div>
+      <div class="quote-card">
+        <span class="quote-mark">“</span>
+        <p><strong>Мой опыт и вся практика</strong> в одном курсе, чтобы вы прошли этот путь <strong>уверенно.</strong></p>
+        <span class="quote-author">— Данил Аверин</span>
+      </div>
+    </div>
+  </section>
 
+  <section class="video-section section-gray" id="video">
+    <div class="page-width video-layout">
       <div class="video-copy">
-        <p class="eyebrow">Видео</p>
+        <p class="eyebrow">ПРОФЕССИОНАЛЬНЫЙ ПОДХОД</p>
         <h2>Как устроена профессиональная продажа квартиры?</h2>
         <ul class="check-list">
           <li>Что происходит после публикации объявления?</li>
@@ -185,290 +96,97 @@
           <li>Как вести переговоры?</li>
           <li>Где чаще всего теряются деньги?</li>
         </ul>
-        <a href="#video" class="btn btn-primary" id="videoCtaBtn">
-          <span class="play-dot">▶</span> Посмотреть видео
-        </a>
+      </div>
+      <button class="video-card" id="videoPlayBtn" type="button" aria-label="Посмотреть видео">
+        <img src="desk.png" alt="Видео о продаже квартиры">
+        <span class="video-overlay"></span>
+        <span class="video-play">▶</span>
+      </button>
+    </div>
+  </section>
+
+  <section class="mistakes section-white">
+    <div class="page-width">
+      <p class="eyebrow">ВАЖНО ЗНАТЬ</p>
+      <h2>Где продавцы чаще всего теряют деньги?</h2>
+      <div class="mistake-stack">
+        <article class="mistake-card"><h3>Неправильно определяют цену</h3><p>Завышенная цена отпугивает покупателей в первые же дни. Заниженная цена теряет деньги сразу. Правильная цена определяется по реальным сделкам в доме и районе, а не только по соседним объявлениям.</p></article>
+        <article class="mistake-card"><h3>Слабое объявление</h3><p>Первое, на что смотрит покупатель, — фото. Тёмные и неаккуратные снимки сокращают число обращений ещё до прочтения текста. Хорошие фото и честное подробное описание помогают получить больше обращений.</p></article>
+        <article class="mistake-card"><h3>Не умеют работать с обращениями</h3><p>Пропущенный звонок или долгий ответ на сообщение — это потенциально потерянный покупатель. Важно быстро отвечать, вести учёт обращений и не терять контакты.</p></article>
+        <article class="mistake-card"><h3>Показы без стратегии</h3><p>Показ должен вести к следующему шагу: обратной связи, торгу или авансу. Без плана продавец тратит время на показы, которые никуда не движутся.</p></article>
+        <article class="mistake-card"><h3>Слишком рано торгуются</h3><p>Скидку не обязательно давать при первом предложении. Торг лучше вести, когда понятен реальный интерес рынка и есть основания для изменения цены.</p></article>
       </div>
     </div>
   </section>
 
-  <!-- MISTAKES -->
-  <section class="section mistakes-section">
-    <div class="container">
-      <div class="section-head-row">
-        <div>
-          <p class="eyebrow">Важно знать</p>
-          <h2>Где продавцы чаще всего теряют деньги?</h2>
-        </div>
-        <a href="#contact" class="link-arrow head-link">Все ошибки и решения <span class="arrow">→</span></a>
+  <section class="system-section section-gray" id="system-stages">
+    <div class="page-width">
+      <p class="eyebrow">ПРОВЕРЕННАЯ СИСТЕМА</p>
+      <h2>Вся продажа — перед вами</h2>
+      <p class="section-lead">20 этапов от подготовки до получения денег.</p>
+      <div class="stage-list">
+        <a href="stages.html#stage-1"><b>01</b><span>Подготовка</span><i>→</i></a>
+        <a href="stages.html#stage-6"><b>02</b><span>Поиск покупателя</span><i>→</i></a>
+        <a href="stages.html#stage-11"><b>03</b><span>Показы и переговоры</span><i>→</i></a>
+        <a href="stages.html#stage-16"><b>04</b><span>Сделка</span><i>→</i></a>
       </div>
-
-      <div class="mistakes-list">
-        <article class="mistake-row">
-          <div class="mistake-icon placeholder-gradient placeholder-10"><span>₽</span></div>
-          <div class="mistake-body">
-            <h3>Неправильно определяют цену</h3>
-            <p>Завышенная цена отпугивает покупателей в первые же дни: объявление «протухает» в поиске, и даже последующее снижение цены не спасает — покупатели видят долгий срок экспозиции и решают, что с квартирой что-то не так. Заниженная цена, наоборот, теряет деньги сразу — часто десятки, а то и сотни тысяч рублей. Правильная цена определяется по реальным сделкам в доме и районе, а не по соседним объявлениям.</p>
-          </div>
-        </article>
-
-        <article class="mistake-row">
-          <div class="mistake-icon placeholder-gradient placeholder-11"><span>📷</span></div>
-          <div class="mistake-body">
-            <h3>Слабое объявление</h3>
-            <p>Первое, на что смотрит покупатель, — фото. Тёмные, неаккуратные снимки «как есть» сокращают число обращений в разы ещё до того, как человек прочитал текст. Хорошие фото и честное подробное описание увеличивают поток звонков и позволяют увереннее держать цену на переговорах.</p>
-          </div>
-        </article>
-
-        <article class="mistake-row">
-          <div class="mistake-icon placeholder-gradient placeholder-12"><span>📵</span></div>
-          <div class="mistake-body">
-            <h3>Не умеют работать с обращениями</h3>
-            <p>Каждый пропущенный звонок или долгий ответ на сообщение — это упущенный покупатель, который просто уходит к следующему объявлению. Важно отвечать быстро, вести учёт обращений и не терять контакты потенциальных покупателей в переписке.</p>
-          </div>
-        </article>
-
-        <article class="mistake-row">
-          <div class="mistake-icon placeholder-gradient placeholder-13"><span>🤝</span></div>
-          <div class="mistake-body">
-            <h3>Показы без стратегии</h3>
-            <p>Показ «просто чтобы посмотреть» редко приводит к сделке. Каждый показ должен вести к следующему шагу — обратной связи, торгу или авансу. Без чёткого плана продавец теряет время на показы, которые никуда не движутся, а покупатель теряет интерес.</p>
-          </div>
-        </article>
-
-        <article class="mistake-row">
-          <div class="mistake-icon placeholder-gradient placeholder-14"><span>💸</span></div>
-          <div class="mistake-body">
-            <h3>Слишком рано торгуются</h3>
-            <p>Соглашаясь на скидку при первом же предложении, продавец часто теряет деньги без необходимости — покупатель, который уже решил взять именно эту квартиру, обычно готов заплатить больше. Торг стоит вести после нескольких показов, когда понятен реальный интерес рынка, а не при первом звонке.</p>
-          </div>
-        </article>
-      </div>
+      <a class="btn btn-blue system-btn" href="stages.html">Смотреть все 20 этапов →</a>
     </div>
   </section>
 
-  <!-- 20 STAGES -->
-  <section class="section stages-section" id="stages">
-    <div class="container">
-      <div class="section-head-row">
-        <div>
-          <p class="eyebrow">Проверенная система</p>
-          <h2>Вся продажа — перед вами</h2>
-          <p class="section-lead">20 этапов от подготовки до получения денег.</p>
-        </div>
-        <a href="stages.html" class="link-arrow head-link">Смотреть все 20 этапов <span class="arrow">→</span></a>
-      </div>
-
-      <div class="stages-grid">
-        <a class="stage-card" href="stages.html#stage-1">
-          <p class="stage-range">01 — 05</p>
-          <h3>Подготовка</h3>
-          <div class="stage-photo placeholder-gradient placeholder-6"></div>
-          <div class="stage-footer">
-            <span>✓ Цели, документы, стратегия, цена</span>
-            <span class="stage-go">→</span>
-          </div>
-        </a>
-
-        <a class="stage-card" href="stages.html#stage-6">
-          <p class="stage-range">06 — 10</p>
-          <h3>Поиск покупателя</h3>
-          <div class="stage-photo placeholder-gradient placeholder-7"></div>
-          <div class="stage-footer">
-            <span>✓ Объявление, реклама, звонки и обращения</span>
-            <span class="stage-go">→</span>
-          </div>
-        </a>
-
-        <a class="stage-card" href="stages.html#stage-11">
-          <p class="stage-range">11 — 15</p>
-          <h3>Показы и переговоры</h3>
-          <div class="stage-photo placeholder-gradient placeholder-8"></div>
-          <div class="stage-footer">
-            <span>✓ Показы, обратная связь, торг и решения</span>
-            <span class="stage-go">→</span>
-          </div>
-        </a>
-
-        <a class="stage-card" href="stages.html#stage-16">
-          <p class="stage-range">16 — 20</p>
-          <h3>Сделка</h3>
-          <div class="stage-photo placeholder-gradient placeholder-9"></div>
-          <div class="stage-footer">
-            <span>✓ Аванс, договор, расчеты, регистрация</span>
-            <span class="stage-go">→</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHAT NEXT -->
-  <section class="section options-section">
-    <div class="container">
-      <p class="eyebrow">Ваши варианты</p>
+  <section class="options section-white">
+    <div class="page-width">
+      <p class="eyebrow">ВАШИ ВАРИАНТЫ</p>
       <h2>Что делать дальше?</h2>
-      <p class="section-lead">Выберите подходящий вариант — и двигайтесь к своей цели.</p>
-
-      <div class="options-grid">
-        <article class="option-card">
-          <div class="option-icon placeholder-gradient placeholder-2"><span>📖</span></div>
-          <h3>Изучить материалы</h3>
-          <p>Получите пошаговую систему профессиональной продажи квартиры. 20 этапов, видео, чек-листы и шаблоны.</p>
-          <a href="stages.html" class="link-arrow">Перейти к изучению <span class="arrow">→</span></a>
-        </article>
-
-        <article class="option-card">
-          <div class="option-icon placeholder-gradient placeholder-3"><span>💬</span></div>
-          <h3>Разобрать вашу ситуацию</h3>
-          <p>Ответьте на несколько вопросов о квартире и текущей ситуации. В конце оставьте контакты — я подскажу, что важно сделать в вашем случае.</p>
-          <a href="#contact" class="link-arrow">Пройти бесплатный разбор <span class="arrow">→</span></a>
-        </article>
-
-        <article class="option-card">
-          <div class="option-icon placeholder-gradient placeholder-4"><span>🔑</span></div>
-          <h3>Передать продажу специалисту</h3>
-          <p>Не хотите заниматься самостоятельно? Передайте весь процесс специалисту Самолет Плюс — от стратегии до сделки.</p>
-          <a href="#contact" class="link-arrow">Обсудить продажу <span class="arrow">→</span></a>
-        </article>
+      <div class="option-stack">
+        <article class="option-card"><h3>Изучить материалы самостоятельно</h3><p>Получите пошаговую систему профессиональной продажи квартиры. 20 этапов, видео, чек-листы и шаблоны.</p><a href="stages.html">Перейти к изучению →</a></article>
+        <article class="option-card"><h3>Разобрать вашу ситуацию</h3><p>Ответьте на несколько вопросов о квартире и текущей ситуации. В конце оставьте контакты — я подскажу, что важно сделать в вашем случае.</p><a href="#contact">Пройти бесплатный разбор →</a></article>
+        <article class="option-card dark"><h3>Передать продажу специалисту</h3><p>Не хотите заниматься самостоятельно? Передайте весь процесс специалисту Самолет Плюс — от стратегии до сделки.</p><a href="#contact">Обсудить продажу →</a></article>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="section faq-section" id="faq">
-    <div class="container">
-      <div class="section-head-row">
-        <div>
-          <p class="eyebrow">Ответы на главные вопросы</p>
-          <h2>Частые вопросы</h2>
-        </div>
-        <a href="#faq" class="link-arrow head-link">Все вопросы <span class="arrow">→</span></a>
-      </div>
-
-      <div class="faq-grid">
-        <div class="faq-column">
-          <div class="faq-item">
-            <button class="faq-question">
-              Можно ли действительно продать квартиру самостоятельно?
-              <span class="faq-toggle">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Да. Система разбивает продажу на 20 понятных этапов с инструкциями, чек-листами и шаблонами — вы сможете пройти весь путь самостоятельно, без риэлтора.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              Сколько времени занимает продажа?
-              <span class="faq-toggle">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Сроки зависят от цены, состояния квартиры и спроса на рынке. В среднем процесс занимает от нескольких недель до пары месяцев при правильной подготовке.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              Что входит в 20 этапов?
-              <span class="faq-toggle">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Подготовка и оценка, поиск покупателя, показы и переговоры, а также оформление сделки — от аванса до получения денег.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-column">
-          <div class="faq-item">
-            <button class="faq-question">
-              Можно ли получить помощь только с одним этапом?
-              <span class="faq-toggle">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Да, вы можете обратиться за консультацией по конкретному этапу — например, только по определению цены или подготовке к показам.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              Что делать, если квартира уже выставлена?
-              <span class="faq-toggle">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Пройдите бесплатный разбор ситуации — мы посмотрим, что можно улучшить в объявлении, цене или стратегии показов.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              Можно ли передать вам продажу полностью?
-              <span class="faq-toggle">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Да, специалисты Самолет Плюс могут взять на себя весь процесс — от стратегии и рекламы до сопровождения сделки.</p>
-            </div>
-          </div>
-        </div>
+  <section class="faq section-gray" id="faq">
+    <div class="page-width">
+      <p class="eyebrow">FAQ</p>
+      <h2>Частые вопросы</h2>
+      <div class="faq-list">
+        <details><summary>Можно ли действительно продать квартиру самостоятельно?</summary><p>Да. Продажа состоит из последовательных этапов: подготовка, цена, объявление, работа с покупателями, показы, переговоры и оформление сделки.</p></details>
+        <details><summary>Сколько времени занимает продажа?</summary><p>Срок зависит от цены, состояния квартиры и спроса. Поэтому в системе отдельно разбираются цена, подготовка и работа с обращениями.</p></details>
+        <details><summary>Что входит в 20 этапов?</summary><p>Подготовка, определение цены, создание объявления, поиск покупателя, показы, переговоры и оформление сделки.</p></details>
+        <details><summary>Можно ли получить помощь только с одним этапом?</summary><p>Да. Можно отдельно обсудить конкретную ситуацию — например, цену, объявление или переговоры.</p></details>
+        <details><summary>Что делать, если квартира уже выставлена?</summary><p>Начните с проверки цены, фотографий, описания и качества обработки обращений. После этого можно корректировать стратегию.</p></details>
+        <details><summary>Можно ли передать вам продажу полностью?</summary><p>Да. Если самостоятельная продажа вам не подходит, можно обсудить передачу сделки специалисту Самолет Плюс.</p></details>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="section contact-section" id="contact">
-    <div class="container contact-grid">
-      <div class="contact-photo photo-frame">
-        <img src="portrait.jpg" alt="Данил Аверин, практикующий риэлтор">
-        <span class="sticky-note note-3">Хорошие сделки<br>начинаются<br>с диалога</span>
-      </div>
-
-      <div class="contact-form-wrap">
-        <p class="eyebrow">Свяжитесь со мной</p>
-        <h2>Хотите обсудить продажу квартиры?</h2>
-        <p class="section-lead">Опишите ситуацию — я свяжусь с вами и предложу подходящий вариант.</p>
-
+  <section class="contact section-white" id="contact">
+    <div class="page-width contact-layout">
+      <div class="contact-photo"><img src="portrait.png" alt="Данил Аверин"></div>
+      <div>
+        <p class="eyebrow">КОНТАКТ</p>
+        <h2>Обсудить продажу</h2>
         <form class="contact-form" id="contactForm">
-          <div class="form-row">
-            <input type="text" name="name" placeholder="Ваше имя" required>
-            <input type="tel" name="phone" placeholder="Телефон" required>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Отправить заявку <span class="arrow">→</span></button>
-          <p class="form-success" id="formSuccess">Спасибо! Заявка отправлена — я свяжусь с вами в ближайшее время.</p>
-          <p class="form-error" id="formError">Не получилось отправить форму. Позвоните или напишите напрямую — контакты ниже.</p>
+          <label>Имя<input type="text" name="name" placeholder="Как к вам обращаться" required></label>
+          <label>Телефон<input type="tel" name="phone" placeholder="Ваш номер телефона" required></label>
+          <label>Сообщение<textarea name="message" placeholder="Что происходит?" rows="3"></textarea></label>
+          <button class="btn btn-blue submit" type="submit">Отправить →</button>
+          <p class="form-success" id="formSuccess">Спасибо! Заявка отправлена.</p>
+          <p class="form-error" id="formError">Не получилось отправить форму. Позвоните или напишите напрямую.</p>
         </form>
-
-        <div class="direct-contacts">
-          <p>Или свяжитесь напрямую:</p>
-          <a href="tel:+79512002182">+7 951 200-21-82</a>
-          <a href="mailto:danil@avreal.ru">danil@avreal.ru</a>
-        </div>
       </div>
     </div>
   </section>
-
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <a href="#top" class="logo">
-        <span class="logo-main">самолет</span><span class="logo-accent">плюс</span>
-      </a>
-      <p>ПРОДАЙ САМ — знания, которые работают</p>
-      <p class="footer-contacts"><a href="tel:+79512002182">+7 951 200-21-82</a> · <a href="mailto:danil@avreal.ru">danil@avreal.ru</a></p>
-    </div>
-
-    <nav class="footer-nav">
-      <a href="#system">О системе</a>
-      <a href="stages.html">20 этапов</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Контакты</a>
-    </nav>
-
-    <p class="footer-copy">© 2026 Данил Аверин.<br>Проект Самолет Плюс</p>
+  <div class="page-width footer-inner">
+    <div><strong>ПРОДАЙ САМ</strong><p>знания, которые работают</p></div>
+    <nav><a href="#system">О системе</a><a href="stages.html">20 этапов</a><a href="#faq">FAQ</a><a href="#contact">Контакты</a></nav>
+    <div><a href="tel:+79512002182">+7 951 200-21-82</a><br><a href="mailto:danil@avreal.ru">danil@avreal.ru</a><p>© 2026 Данил Аверин</p></div>
   </div>
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>
