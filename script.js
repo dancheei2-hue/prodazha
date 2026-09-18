@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* Мобильное меню */
+  /* =========================
+     МОБИЛЬНОЕ МЕНЮ
+  ========================= */
 
   const burger = document.getElementById('burgerBtn');
   const menu = document.getElementById('mobileMenu');
@@ -17,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       );
 
     });
+
 
     menu.querySelectorAll('a').forEach(a => {
 
@@ -36,7 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  /* VIMEO — собственный экран после окончания видео */
+  /* =========================
+     VIMEO
+     СВОЙ ЭКРАН ПОСЛЕ ОКОНЧАНИЯ
+  ========================= */
 
   const vimeoPlayer =
     document.getElementById('vimeoPlayer');
@@ -45,7 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('videoEnded');
 
 
-  if (vimeoPlayer && typeof Vimeo !== 'undefined') {
+  if (
+    vimeoPlayer &&
+    typeof Vimeo !== 'undefined'
+  ) {
 
     const player =
       new Vimeo.Player(vimeoPlayer);
@@ -54,14 +63,18 @@ document.addEventListener('DOMContentLoaded', () => {
     player.on('ended', () => {
 
       /*
-        Скрываем Vimeo-плеер сразу после окончания.
-        Вместо финального экрана Vimeo
-        показываем наш экран.
+        Скрываем Vimeo-плеер
+        после полного окончания видео.
       */
 
       vimeoPlayer.style.visibility =
         'hidden';
 
+
+      /*
+        Показываем собственный
+        финальный экран сайта.
+      */
 
       if (videoEnded) {
 
@@ -81,7 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  /* Форма обратной связи */
+  /* =========================
+     ФОРМА ОБРАТНОЙ СВЯЗИ
+  ========================= */
 
   const form =
     document.getElementById('contactForm');
@@ -112,6 +127,10 @@ document.addEventListener('DOMContentLoaded', () => {
           );
 
 
+        /*
+          Сбрасываем предыдущие сообщения.
+        */
+
         success?.classList.remove(
           'visible'
         );
@@ -121,6 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
         );
 
 
+        /*
+          Блокируем кнопку на время отправки.
+        */
+
         if (btn) {
 
           btn.disabled = true;
@@ -129,6 +152,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
 
+
+        /*
+          Собираем данные формы.
+        */
 
         const data = {
 
@@ -172,6 +199,11 @@ document.addEventListener('DOMContentLoaded', () => {
             );
 
 
+          /*
+            Если сервер вернул ошибку,
+            показываем сообщение об ошибке.
+          */
+
           if (!res.ok) {
 
             throw new Error(
@@ -180,6 +212,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
           }
 
+
+          /*
+            Успешная отправка.
+          */
 
           form.reset();
 
@@ -191,12 +227,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } catch (err) {
 
+          /*
+            Ошибка отправки.
+          */
+
           error?.classList.add(
             'visible'
           );
 
 
         } finally {
+
+          /*
+            Возвращаем кнопку
+            в исходное состояние.
+          */
 
           if (btn) {
 
