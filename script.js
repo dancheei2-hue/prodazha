@@ -36,58 +36,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  /* RUTUBE — собственный экран после окончания видео */
+  /* VIMEO — собственный экран после окончания видео */
 
-  const rutubePlayer =
-    document.getElementById('rutubePlayer');
+  const vimeoPlayer =
+    document.getElementById('vimeoPlayer');
 
   const videoEnded =
     document.getElementById('videoEnded');
 
 
-  window.addEventListener('message', event => {
+  if (vimeoPlayer && typeof Vimeo !== 'undefined') {
 
-    if (
-      event.source !==
-      rutubePlayer?.contentWindow
-    ) {
-      return;
-    }
+    const player =
+      new Vimeo.Player(vimeoPlayer);
 
 
-    let data = event.data;
+    player.on('ended', () => {
 
+      /*
+        Скрываем Vimeo-плеер сразу после окончания.
+        Вместо финального экрана Vimeo
+        показываем наш экран.
+      */
 
-    try {
-
-      data =
-        typeof data === 'string'
-          ? JSON.parse(data)
-          : data;
-
-    } catch (e) {
-
-      return;
-
-    }
-
-
-    /*
-      RUTUBE сообщает об окончании
-      воспроизведения через player:playComplete
-    */
-
-    if (
-      data?.type ===
-      'player:playComplete'
-    ) {
-
-      if (rutubePlayer) {
-
-        rutubePlayer.style.visibility =
-          'hidden';
-
-      }
+      vimeoPlayer.style.visibility =
+        'hidden';
 
 
       if (videoEnded) {
@@ -103,9 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       }
 
-    }
+    });
 
-  });
+  }
 
 
   /* Форма обратной связи */
