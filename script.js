@@ -259,3 +259,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+
+/* ===== INTERACTION LAYER ===== */
+(() => {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const header = document.querySelector('.site-header');
+  const revealTargets = document.querySelectorAll('.hero-copy,.course-facts,.audience-item,.quote-card,.video-copy,.video-card,.mistake-card,.stage-list a,.option-card,.faq details,.contact-photo,.contact-form');
+  revealTargets.forEach(el => el.classList.add('reveal'));
+  if (!reduce && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('is-visible'); io.unobserve(entry.target); } }), {threshold:.12,rootMargin:'0px 0px -40px'});
+    revealTargets.forEach(el => io.observe(el));
+  } else revealTargets.forEach(el => el.classList.add('is-visible'));
+  const onScroll = () => { if(header) header.style.boxShadow = window.scrollY > 8 ? '0 10px 35px rgba(10,23,37,.08)' : 'none'; };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+  if (!reduce) document.addEventListener('pointerdown', e => {
+    const target = e.target.closest('.btn,.header-cta,.option-card a,.stage-list a'); if(!target) return;
+    if(getComputedStyle(target).position === 'static') target.style.position='relative'; target.style.overflow='hidden';
+    const r=target.getBoundingClientRect(), dot=document.createElement('span'); dot.className='ripple'; dot.style.left=(e.clientX-r.left)+'px'; dot.style.top=(e.clientY-r.top)+'px'; target.appendChild(dot); setTimeout(()=>dot.remove(),700);
+  });
+})();
