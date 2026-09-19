@@ -49,6 +49,74 @@
 
 /* Guided screen-by-screen navigation */
 @media (min-width:801px){
+  html{scroll-behavior:auto;overflow-y:auto}
+  body{scroll-snap-type:none}
+  main>.scene{scroll-snap-align:none;scroll-snap-stop:normal}
+  .scene{height:100vh;min-height:100vh}
+  .horizontal-scene{height:100vh;min-height:100vh;padding:0;position:relative;overflow:hidden;overscroll-behavior:none}
+  .sequence-track{height:100%;width:600vw;display:flex;transform:translate3d(0,0,0);transition:transform .78s cubic-bezier(.2,.8,.2,1);will-change:transform}
+  .sequence-panel{width:100vw;height:100vh;min-height:100vh;flex:none;padding:17vh 7vw 9vh;display:flex;flex-direction:column;justify-content:center;position:relative;border-right:1px solid #303033}
+  .sequence-panel>span,.sequence-panel>small{font-size:11px;letter-spacing:.16em;color:#8e8e95;font-weight:800}
+  .sequence-panel>b{font-family:Arial,Helvetica,sans-serif;font-size:clamp(86px,13vw,210px);line-height:.78;letter-spacing:-.08em;margin-top:30px;max-width:90vw}
+  .sequence-panel p{font-size:clamp(18px,2vw,28px);line-height:1.35;color:#c7c7cb;max-width:560px;margin:40px 0 0}
+  .sequence-panel small:last-child{margin-top:auto;color:#fff}
+  .sequence-intro{padding-left:12vw}
+  .sequence-intro h2{font-family:Arial,Helvetica,sans-serif;font-size:clamp(60px,7.5vw,118px);line-height:.88;letter-spacing:-.065em;margin:25px 0 0}
+  .sequence-intro h2 em{font-style:normal;color:var(--blue)}
+  .sequence-intro p{color:#aaa;max-width:440px}
+  .sequence-intro>strong{font-size:55px;color:var(--blue);margin-top:45px;font-weight:400}
+  .sequence-finish>b{color:#fff}
+  .sequence-finish>strong{font-size:55px;color:var(--blue);margin-top:40px;font-weight:400}
+}
+@media (max-width:800px){
+  html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
+  main>.scene{scroll-snap-align:start;scroll-snap-stop:always}
+  .horizontal-scene{height:auto;min-height:100svh;overflow:hidden;padding:0!important}
+  .sequence-track{display:block;width:100%;transform:none!important}
+  .sequence-panel{min-height:100svh;height:auto;padding:18vh 6vw 9vh;border:0;border-bottom:1px solid #303033}
+  .sequence-panel>b{font-size:clamp(62px,18vw,110px);line-height:.82;letter-spacing:-.08em;margin-top:24px}
+  .sequence-panel p{font-size:17px;line-height:1.45;margin-top:28px;max-width:90%}
+  .sequence-intro h2{font-size:clamp(50px,13vw,82px);line-height:.9}
+  .sequence-intro{padding-left:6vw}
+}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-bg img,.hero h1 span,.hero-card,.big-arrow{animation:none}.reveal{transition:none}.final-photo img{transition:none}}
+
+/* Desktop stabilization */
+@media (min-width:801px){
+  html,body{min-width:320px;background:var(--bg)}
+  .site-header{display:block!important}
+  .burger,.mobile-menu{display:none!important}
+  .scene{width:100%;min-height:100vh}
+  .hero{min-height:100vh;height:100vh}
+  .hero-copy{width:min(1000px,70vw);padding-left:7vw;padding-bottom:8vh}
+  .hero h1{font-size:clamp(92px,12vw,210px);line-height:.78;display:block}
+  .hero-copy>p{max-width:760px}
+  .hero-card{display:flex!important}
+  .statement{min-height:100vh;display:flex;align-items:center;justify-content:center}
+  .statement-inner{width:min(1100px,84vw)}
+  .statement h2{font-size:clamp(64px,8vw,128px);line-height:.9}
+  .sequence{min-height:100vh}
+  .sequence-word{font-size:clamp(48px,6.3vw,100px)}
+  .video-scene{min-height:100vh}
+  .video-heading h2{font-size:clamp(56px,7vw,108px);line-height:.9}
+  .video-wrap{width:min(1080px,82vw)}
+  .money-scene{min-height:100vh}
+  .money-copy h2{font-size:clamp(68px,8vw,124px);line-height:.88}
+  .route-scene{min-height:100vh}
+  .route-head h2{font-size:clamp(64px,7vw,112px);line-height:.9}
+  .mistakes-scene{min-height:100vh}
+  .mistakes-head h2{font-size:clamp(64px,7vw,112px);line-height:.88}
+  .mistake-cards article{min-height:360px}
+  .choice-scene{min-height:100vh;display:flex;align-items:center}
+  .choice-inner{width:min(1250px,100%)}
+  .choice-inner h2{font-size:clamp(64px,7vw,112px);line-height:.88}
+  .final-scene{min-height:100vh;height:100vh}
+  .final-copy h2{font-size:clamp(68px,8vw,124px);line-height:.88}
+}
+
+/* Guided screen-by-screen navigation */
+@media (min-width:801px){
   html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
   body{scroll-snap-type:y mandatory}
   main>.scene{scroll-snap-align:start;scroll-snap-stop:always}

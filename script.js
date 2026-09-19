@@ -13,40 +13,76 @@ document.addEventListener('DOMContentLoaded',()=>{
  const iframe=document.getElementById('vimeoPlayer'),ended=document.getElementById('videoEnded');
  if(iframe&&window.Vimeo){const player=new Vimeo.Player(iframe);player.on('ended',()=>{iframe.style.visibility='hidden';ended?.classList.add('visible')})}
 
- // Desktop: the journey chapter moves horizontally, then returns to vertical scrolling.
+ // Desktop guided navigation: wheel moves one full screen at a time.
  const horizontal = document.querySelector('.horizontal-scene');
  const track = document.getElementById('sequenceTrack');
- const progressLine = horizontal?.querySelector('.horizontal-progress b');
  const panels = horizontal ? [...horizontal.querySelectorAll('.sequence-panel')] : [];
- let hIndex = 0, hBusy = false;
+ const scenesAll = [...document.querySelectorAll('main > .scene')];
+ let hIndex = 0, wheelBusy = false;
  const setHorizontal = (next) => {
-  if(!track || !panels.length) return;
-  hIndex = Math.max(0, Math.min(panels.length - 1, next));
-  track.style.transform = `translate3d(-${hIndex * 100}vw,0,0)`;
-  if(progressLine) progressLine.style.width = `${((hIndex+1)/panels.length)*100}%`;
-  horizontal.classList.toggle('is-horizontal-end', hIndex === panels.length-1);
+   if(!track || !panels.length) return;
+   hIndex = Math.max(0, Math.min(panels.length - 1, next));
+   track.style.transform = `translate3d(-${hIndex * 100}vw,0,0)`;
+ };
+ const goScene = (scene) => {
+   if(!scene) return;
+   scene.scrollIntoView({behavior:'smooth', block:'start'});
+ };
+ const horizontalIsActive = () => {
+   if(!horizontal) return false;
+   const r=horizontal.getBoundingClientRect();
+   return r.top > -window.innerHeight*.15 && r.top < window.innerHeight*.15;
  };
  if(horizontal && track && window.matchMedia('(min-width:801px)').matches){
-  setHorizontal(0);
-  window.addEventListener('wheel', e => {
-   const r = horizontal.getBoundingClientRect();
-   const inside = r.top <= 2 && r.bottom >= window.innerHeight - 2;
-   if(!inside || hBusy) return;
-   const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-   if(Math.abs(delta) < 18) return;
-   if((delta > 0 && hIndex < panels.length-1) || (delta < 0 && hIndex > 0)){
-    e.preventDefault();
-    hBusy = true;
-    setHorizontal(hIndex + (delta > 0 ? 1 : -1));
-    setTimeout(()=>hBusy=false, 760);
-   }
-  }, {passive:false});
-  let startX=0,startY=0;
-  horizontal.addEventListener('pointerdown',e=>{startX=e.clientX;startY=e.clientY});
-  horizontal.addEventListener('pointerup',e=>{
-   const dx=e.clientX-startX,dy=e.clientY-startY;
-   if(Math.abs(dx)>60 && Math.abs(dx)>Math.abs(dy)) setHorizontal(hIndex + (dx<0?1:-1));
-  });
+   setHorizontal(0);
+   window.addEventListener('wheel', e => {
+     if(Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
+     const down=e.deltaY>0;
+     if(wheelBusy){e.preventDefault();return;}
+
+     if(horizontalIsActive()){
+       if((down && hIndex < panels.length-1) || (!down && hIndex > 0)){
+         e.preventDefault();
+         wheelBusy=true;
+         setHorizontal(hIndex + (down?1:-1));
+         setTimeout(()=>wheelBusy=false,820);
+         return;
+       }
+       // At the ends, return control to the normal vertical page flow.
+       if(down && hIndex === panels.length-1){
+         e.preventDefault();
+         wheelBusy=true;
+         const next=horizontal.nextElementSibling;
+         setTimeout(()=>{goScene(next);wheelBusy=false},40);
+         return;
+       }
+       if(!down && hIndex === 0){
+         e.preventDefault();
+         wheelBusy=true;
+         const prev=horizontal.previousElementSibling;
+         setTimeout(()=>{goScene(prev);wheelBusy=false},40);
+         return;
+       }
+     }
+
+     // If a large wheel gesture lands between sections, snap to the nearest scene.
+     const candidates=scenesAll.filter(x=>x!==horizontal || horizontalIsActive());
+     let nearest=null,dist=Infinity;
+     candidates.forEach(x=>{const d=Math.abs(x.getBoundingClientRect().top);if(d<dist){dist=d;nearest=x;}});
+     if(nearest && dist>8 && dist<window.innerHeight*.75){
+       e.preventDefault();
+       wheelBusy=true;
+       goScene(nearest);
+       setTimeout(()=>wheelBusy=false,820);
+     }
+   }, {passive:false});
+
+   let startX=0,startY=0;
+   horizontal.addEventListener('pointerdown',e=>{startX=e.clientX;startY=e.clientY});
+   horizontal.addEventListener('pointerup',e=>{
+     const dx=e.clientX-startX,dy=e.clientY-startY;
+     if(Math.abs(dx)>60 && Math.abs(dx)>Math.abs(dy)) setHorizontal(hIndex + (dx<0?1:-1));
+   });
  }
 
  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{document.body.classList.add('navigating');setTimeout(()=>document.body.classList.remove('navigating'),500)}));
