@@ -117,9 +117,9 @@
 
 /* Guided screen-by-screen navigation */
 @media (min-width:801px){
-  html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
-  body{scroll-snap-type:y mandatory}
-  main>.scene{scroll-snap-align:start;scroll-snap-stop:always}
+  html{scroll-behavior:auto}
+  body{scroll-snap-type:none}
+  main>.scene{scroll-snap-align:none;scroll-snap-stop:normal}
   .horizontal-scene{height:100vh;min-height:100vh;padding:0;position:relative;overflow:hidden;overscroll-behavior:contain}
   .horizontal-progress{position:absolute;z-index:5;left:7vw;right:7vw;top:8vh;display:flex;align-items:center;gap:18px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#aaa}
   .horizontal-progress i{display:block;width:min(280px,24vw);height:2px;background:#333;overflow:hidden}
